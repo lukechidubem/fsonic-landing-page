@@ -34,7 +34,6 @@ const NavLink = (props: Props) => {
       smooth={true}
       offset={-70} // Adjust this value for the desired offset
       duration={500}
-      key={id}
     >
       <Box
         fontFamily={inter.className}
@@ -90,9 +89,7 @@ export default function NavBar() {
           <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
             {Links.map((link) => (
               <Box key={link}>
-                <NavLink key={link} id={link}>
-                  {link}
-                </NavLink>
+                <NavLink id={link}>{link}</NavLink>
               </Box>
             ))}
           </HStack>
@@ -115,10 +112,8 @@ export default function NavBar() {
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
-                <Box>
-                  <NavLink key={link} id={link}>
-                    {link}
-                  </NavLink>
+                <Box key={link}>
+                  <NavLink id={link}>{link}</NavLink>
                 </Box>
               ))}
             </Stack>
