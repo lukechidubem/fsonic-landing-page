@@ -8,7 +8,6 @@ import {
   Button,
   useDisclosure,
   Stack,
-  useColorMode,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import Logo from "../../public/resources/logo/logo_fantomsonic.png";
@@ -35,6 +34,7 @@ const NavLink = (props: Props) => {
       smooth={true}
       offset={-70} // Adjust this value for the desired offset
       duration={500}
+      key={id}
     >
       <Box
         fontFamily={inter.className}
@@ -56,7 +56,6 @@ const NavLink = (props: Props) => {
 
 export default function NavBar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <>
